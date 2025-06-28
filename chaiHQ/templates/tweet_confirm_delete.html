@@ -1,0 +1,26 @@
+{% extends "layout.html" %} #no need to give full path bcz search starts frm project level
+
+{% block title %}
+    chai or tweet
+{% endblock  %}
+
+{% block content %}
+    <h1 class="text-center">
+        Are you sure that you want to Delete the tweet,
+        SOCH LOO ?
+    </h1>
+
+    <form method="post">
+ 
+        {% csrf_token %}
+
+        <button class ="btn btn-success">
+            DELETE
+        </button>
+
+        <a class href="{% url 'tweet_list' %}">
+            Cancel
+        </a>
+    </form>
+
+{% endblock  %}

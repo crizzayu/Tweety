@@ -1,0 +1,34 @@
+{% extends "layout.html" %} #no need to give full path bcz search starts frm project level
+
+{% block title %}
+    chai or tweet
+{% endblock  %}
+
+{% block content %}
+    <h1 class="text-center">welcome to chai </h1>
+
+    <h2>
+        {{% if form.instance.pk %}
+           Edit Tweet
+        {% else %}
+           Create Tweet
+        {% endif %}}
+
+        
+        <form method= "post" enctype="multipart/form-data" class="form" >
+            
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button class="btn btn-warning " type="submt">
+                Submit
+            </button>  
+        </form>
+
+        <a href="{% url 'tweet_list' %}">
+            Back to tweet list
+        </a>
+
+    </h2>
+{% endblock  %}
