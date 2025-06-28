@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from chaiHQ import views
 from django.contrib.auth.urls import views as auth_views
 from django.views.generic import RedirectView
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='/tweet/', permanent=False)),
@@ -32,3 +32,5 @@ urlpatterns = [
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
