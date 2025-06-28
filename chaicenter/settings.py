@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9tru1lqf3j3br^7je)9ikrciyb$%i&=hzq!5i!0py0mdn@&)9n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['tweety-we6j.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['tweety-1-a5cu.onrender.com']
 
 
 # Application definition
@@ -115,7 +115,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -125,7 +125,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static') # static needs to be in a list "[ ]"
 ]
